@@ -1,0 +1,50 @@
+
+CREATE TABLE cad_empresa(
+  CNPJ VARCHAR(15) NOT null,
+  nome varchar(50),
+  endereco varchar(50),
+  telefone int,
+  nome_responsavel varchar(20)
+  CONSTRAINT pk_CNPJ PRIMARY KEY
+  );
+  
+  CREATE TABLE webdev(
+    id_webdev varchar(10) NOT NULL,
+    descricao varchar(50),
+    carga_horaria INT
+    CONSTRAINT pk_id_webdev PRIMARY KEY
+    );
+    
+    CREATE TABLE dados(
+    id_dados varchar(10) NOT NULL,
+    descricao varchar(50),
+    carga_horaria INT
+    CONSTRAINT pk_id_dados PRIMARY KEY
+    );
+    
+    CREATE TABLE marketing(
+    id_marketing varchar(10) NOT NULL,
+    descricao varchar(50),
+    carga_horaria INT
+    CONSTRAINT pk_id_marketing PRIMARY KEY
+    );
+    
+    INSERT INTO cad_empresa VALUES(000000000000,'empresa1','rua a','99999','a');
+    INSERT INTO cad_empresa VALUES(111111111111,'empresa2','rua b','00000','b');
+    
+    INSERT INTO webdev VALUES(1,'webdesign','40');
+    INSERT INTO webdev VALUES(2,'construcao de sites','40');
+    
+    INSERT INTO dados VALUES(1,'analista','40');
+    INSERT INTO dados VALUES(2,'administrador','40');
+    
+    insert INTO marketing VALUES(1,'analista','40');
+    INSERT INTO marketing VALUES(2,'administrador','40');
+    
+    CREATE TABLE cad_tecnologias(
+    id_cadastro int NOT NULL,
+    CONSTRAINT pk_cad_tecnologias PRIMARY KEY,
+    constraint fk_id_webdev foreign key(id_webdev) REFERENCES webdev(id),
+    constraint fk_id_dados foreign key(id_dados) REFERENCES dados(id),
+    constraint fk_id_marketing foreign key(id_marketing) REFERENCES marketing(id)
+    );

@@ -1,0 +1,11 @@
+1. Existem outras entidades além dessas?
+   Sim. Foi necessário criar uma entidade para cada curso e visto que a relação entre entidade cliente e entidade cadastro
+   de tecnologias existe a cardinalidade máxima, foi necessário que seu relacionamento se tornasse uma entidade.
+
+2. Quais são os principais campos e tipos?
+    Os id's de cada entidade sendo tipo varchar nos cursos e inteiro nos demais.
+    CNPJ em empresas parceiras sendo varchar.
+   
+3. Como essas entidades estão relacionadas?
+   Cada curso está contido no cadastro de tecnologias.
+   O cadastro de tecnologias é utilizado pelas empresas parceiras para acessarem os cursos.
